@@ -1,8 +1,8 @@
-# 🏠 realestate.com.au Scraper — Property Listings, Fast or Fully Detailed
+# 🏠 realestate.com.au Scraper  Property Listings, Fast or Fully Detailed
 
-**[realestate.com.au Scraper](https://apify.com/dz_omar/realestate-com-au-scraper?fpr=smcx63)** turns any realestate.com.au search URL — buy, rent, or sold — into structured property data: price, address, beds/baths/parking, land size, agent contacts, and photos. Paste a search URL and get a whole result set, or paste a single property link and get one fully detailed record.
+**[realestate.com.au Scraper](https://apify.com/dz_omar/realestate-com-au-scraper?fpr=smcx63)** turns any realestate.com.au search URL  buy, rent, or sold  into structured property data: price, address, beds/baths/parking, land size, agent contacts, and photos. Paste a search URL and get a whole result set, or paste a single property link and get one fully detailed record.
 
-Perfect for **property investors** tracking new listings, **agencies** monitoring competitor stock, and **market researchers** building price/location datasets — without manually copying data off the site.
+Perfect for **property investors** tracking new listings, **agencies** monitoring competitor stock, and **market researchers** building price/location datasets  without manually copying data off the site.
 
 ---
 
@@ -12,11 +12,11 @@ realestate.com.au is Australia's largest property portal, covering homes for sal
 
 Common use cases:
 
-- **Investment research** — pull every listing matching a price/size/location filter to compare deals across suburbs.
-- **Competitor monitoring** — agencies tracking what's newly listed or price-changed in their patch.
-- **Market analysis** — build a dataset of sold prices and current asking prices for a region over time.
-- **Lead generation** — collect agent and agency contact details attached to active listings.
-- **Rental market tracking** — monitor rental listings and pricing in a specific area or drawn map region.
+- **Investment research**  pull every listing matching a price/size/location filter to compare deals across suburbs.
+- **Competitor monitoring**  agencies tracking what's newly listed or price-changed in their patch.
+- **Market analysis**  build a dataset of sold prices and current asking prices for a region over time.
+- **Lead generation**  collect agent and agency contact details attached to active listings.
+- **Rental market tracking**  monitor rental listings and pricing in a specific area or drawn map region.
 
 ---
 
@@ -46,7 +46,7 @@ Common use cases:
 
 ### Start URLs (Array)
 
-Paste realestate.com.au URLs straight from your browser — no editing needed. Two kinds are supported:
+Paste realestate.com.au URLs straight from your browser  no editing needed. Two kinds are supported:
 
 | Input value | What it extracts |
 |---|---|
@@ -62,16 +62,16 @@ Paste realestate.com.au URLs straight from your browser — no editing needed. T
 }
 ```
 
-Filters already applied on the site — location, property type, price, land size, bedrooms, sort order, map-drawn areas, and inspection/auction dates — carry through automatically.
+Filters already applied on the site  location, property type, price, land size, bedrooms, sort order, map-drawn areas, and inspection/auction dates  carry through automatically.
 
 ### `maxResults` (Integer)
 - **Default**: `25`
-- Maximum listings to scrape per search URL. Set to `0` for unlimited (all pages, bounded only by your configured budget). Doesn't affect individual property URLs — those always return exactly one result.
+- Maximum listings to scrape per search URL. Set to `0` for unlimited (all pages, bounded only by your configured budget). Doesn't affect individual property URLs  those always return exactly one result.
 
 ### `fetchPropertyDetails` (Boolean)
 - **Default**: `false`
-- **Off**: fast, cheap — just the data returned by the search itself.
-- **On**: for every listing, also fetches the full detail-page data (complete feature list, inspection/auction times, statement of information, full agency contacts) — one extra request per listing, billed at a higher rate (see Pricing). Individual property URLs always return full detail regardless of this setting.
+- **Off**: fast, cheap  just the data returned by the search itself.
+- **On**: for every listing, also fetches the full detail-page data (complete feature list, inspection/auction times, statement of information, full agency contacts)  one extra request per listing, billed at a higher rate (see Pricing). Individual property URLs always return full detail regardless of this setting.
 
 ```json
 {
@@ -148,41 +148,41 @@ No. Both search and individual property URLs work without logging in.
 With Apify's free monthly credit, you can extract several thousand plain listings, or a smaller number with full details enabled (see Pricing above for exact per-listing cost).
 
 **Can I scrape multiple search URLs or properties in one run?**
-Yes — add as many URLs as you like to `startUrls`; each is processed independently, and you can freely mix search URLs and individual property URLs in the same run.
+Yes  add as many URLs as you like to `startUrls`; each is processed independently, and you can freely mix search URLs and individual property URLs in the same run.
 
 **Does it support map-drawn area searches?**
-Yes — paste a URL from a hand-drawn or pinned map search on the site and it's handled the same as any other search URL.
+Yes  paste a URL from a hand-drawn or pinned map search on the site and it's handled the same as any other search URL.
 
 **What happens if the run crashes or gets interrupted mid-way?**
-The actor checkpoints progress as it goes and resumes exactly where it left off on the next attempt — already-scraped listings aren't re-charged.
+The actor checkpoints progress as it goes and resumes exactly where it left off on the next attempt  already-scraped listings aren't re-charged.
 
 **Does it work for rent and sold listings, not just buy?**
-Yes — buy, rent, and sold are all supported, including sold-specific sorting (e.g. by sale date or sale price).
+Yes  buy, rent, and sold are all supported, including sold-specific sorting (e.g. by sale date or sale price).
 
 ---
 
 ## ⚖️ Legal & Ethical Use
 
-This actor extracts **publicly visible listing data** from realestate.com.au — the same information any visitor can see in their browser without logging in.
+This actor extracts **publicly visible listing data** from realestate.com.au  the same information any visitor can see in their browser without logging in.
 
 **Please use this tool responsibly:**
 - Only extract data you are authorized to access and use.
 - Comply with realestate.com.au's Terms of Service and applicable data protection regulations (GDPR, Australian Privacy Act, etc.).
 - Do not use extracted contact details for spam, harassment, or unsolicited bulk outreach.
-- Respect reasonable request volumes — this actor is built for research and analysis, not for overwhelming the source site.
+- Respect reasonable request volumes  this actor is built for research and analysis, not for overwhelming the source site.
 
 ---
 
 ## 🔄 Resumability
 
-The actor checkpoints its progress as it works through each search URL. If the run is interrupted — a crash, a platform migration, or a manual abort — the next attempt resumes from the last completed page instead of starting over, so you don't lose progress or get re-charged for already-delivered listings.
+The actor checkpoints its progress as it works through each search URL. If the run is interrupted  a crash, a platform migration, or a manual abort  the next attempt resumes from the last completed page instead of starting over, so you don't lose progress or get re-charged for already-delivered listings.
 
 | Trigger | What gets saved |
 |---|---|
 | After every completed search page | Per-URL progress (page position, listings pushed so far) |
 | Platform migration event | Full progress snapshot |
 | Manual abort | Full progress snapshot |
-| Successful completion | Progress is cleared — nothing lingers for the next run |
+| Successful completion | Progress is cleared  nothing lingers for the next run |
 
 ---
 
@@ -190,10 +190,10 @@ The actor checkpoints its progress as it works through each search URL. If the r
 
 | User tier | Proxy used |
 |---|---|
-| 💎 Paying | Dedicated proxy — faster and more reliable |
-| 🆓 Free | Apify Residential Proxy — built-in, automatic |
+| 💎 Paying | Dedicated proxy  faster and more reliable |
+| 🆓 Free | Apify Residential Proxy  built-in, automatic |
 
-Proxy selection is automatic based on your Apify account tier — there's no proxy configuration to set up.
+Proxy selection is automatic based on your Apify account tier  there's no proxy configuration to set up.
 
 ---
 
@@ -215,4 +215,4 @@ Proxy selection is automatic based on your Apify account tier — there's no pro
 
 ## 🌟 Related Actors
 
-- **[Idealista API Scraper](https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63)** — Property listings from Idealista (Spain, Portugal, Italy)
+- **[Idealista API Scraper](https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63)**  Property listings from Idealista (Spain, Portugal, Italy)
