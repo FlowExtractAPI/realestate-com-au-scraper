@@ -209,7 +209,7 @@ Proxy selection is automatic based on your Apify account tier  there's no proxy 
 
 ## 🤝 Support & Resources
 
-- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
+- 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 
 ---
 
